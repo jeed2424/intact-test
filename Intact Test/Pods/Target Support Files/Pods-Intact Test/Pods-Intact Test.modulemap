@@ -1,0 +1,6 @@
+framework module Pods_Intact_Test {
+  umbrella header "Pods-Intact Test-umbrella.h"
+
+  export *
+  module * { export * }
+}
