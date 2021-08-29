@@ -27,7 +27,17 @@ class WishListCollectionViewCell: UICollectionViewCell {
 }
 
 extension WishListCollectionViewCell {
-    func cellConfigure(product: Product){
+    func cellConfigure(product: CurrentProduct){
+        let string = product.image
+//        if let data = try? Data(contentsOf: URL(string: string)!) {
+//            imgPost.image = UIImage(data: data)!.resized(to: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
+//        }
+        imgProdItem.loadImage(url: URL(string: string))
+        lblPrice.text = product.priceString
+        lblName.text = product.title
+        lblShortDes.text = product.shortDes
+        imgColor1.backgroundColor = UIColor(named: product.colorName)
+        imgColor2.backgroundColor = UIColor(named: product.colorName)
 
     }
 }

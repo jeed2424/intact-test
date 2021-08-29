@@ -43,18 +43,18 @@ struct CurrentProduct {
     
     
     init?(productCall: ProductCall){
-        id = productCall.products.first!.id
-        title = productCall.products.first!.title
-        brand = productCall.products.first!.brand
-        shortDes = productCall.products.first!.shortDescription
-        desLong = productCall.products.first!.productDescription
-        image = productCall.products.first!.image
-        price = productCall.products.first!.price
-        colorCode = (productCall.products.first!.colors?.first!.code)!
-        colorName = (productCall.products.first!.colors?.first!.name)!
-        sizeH = productCall.products.first!.size.h
-        sizeW = productCall.products.first!.size.w
-        sizeD = productCall.products.first!.size.d
+        id = productCall.products["Products"]!.id
+        title = productCall.products["Products"]!.title
+        brand = productCall.products["Products"]!.brand
+        shortDes = productCall.products["Products"]!.shortDescription
+        desLong = productCall.products["Products"]!.productDescription
+        image = productCall.products["Products"]!.image
+        price = productCall.products["Products"]!.price
+        colorCode = (productCall.products["Products"]!.colors?.first!.code)!
+        colorName = (productCall.products["Products"]!.colors?.first!.name)!
+        sizeH = productCall.products["Products"]!.size.h
+        sizeW = productCall.products["Products"]!.size.w
+        sizeD = productCall.products["Products"]!.size.d
     }
     
 }
