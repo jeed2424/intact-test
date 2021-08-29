@@ -37,8 +37,8 @@ extension WishListCollectionViewCell {
     lblPrice.text = "\(product.price)"
     lblName.text = product.title
     lblShortDes.text = product.short_description
-    imgColor1.backgroundColor = UIColor(named: product.colors[0].name)
-    imgColor2.backgroundColor = UIColor(named: product.colors[1].name)
+        imgColor1.backgroundColor = UIColor(named: product.colors![0].name)
+        imgColor2.backgroundColor = UIColor(named: product.colors![1].name)
     }
   }
 }

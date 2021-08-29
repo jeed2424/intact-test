@@ -1,8 +1,10 @@
 import Foundation
 
-var Model : Decodable {
-    var products: [Product]?
+struct Model : Decodable {
+    var Product: [Product]?
     
 
 }
+
+
 

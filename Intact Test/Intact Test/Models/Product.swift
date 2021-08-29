@@ -1,30 +1,51 @@
 import Foundation
 
 struct Product : Decodable {
-  var id: Int
-
-  var title: String
-  var brand: String
-  var short_description: String
-  var description: String
-
-  var price: Double
-
-  var image: String
-
-  var colors: [Color]
-
-  var size: Size
-
-  var quantity: Int
+    let id: Int
+    var idString: String {
+        return "\(id)"
+    }
     
-    enum CodingKeys: String, CodingKey {
-        case id, quantity
-        case title, brand
-        case short_description = "short_description"
-        case description = "description"
-        case price, image
-        case colors
-        case size
-}
+    let title: String
+                
+    let brand: String
+    
+    let short_description: String
+    
+    let description: String
+    
+    let image: String
+    
+    let price: Double
+    var priceString: String {
+        return "\(price)"
+    }
+    
+  //  let colorCode: String
+    
+    var colors: [Color]?
+    
+    let sizeH: String
+    
+    let sizeW: String
+    
+    let sizeD: String
+    
+
+    
+    
+//    init?(product: Product){
+//        id = product.id
+//        title = product.title
+//        brand = product.brand
+//        shortDes = product.shortDes
+//        desLong = product.desLong
+//        image = product.image
+//        price = product.price
+////        colorCode = product.colorCode
+////        colorName = product.colorName
+//        sizeH = product.sizeH
+//        sizeW = product.sizeW
+//        sizeD = product.sizeD
+//    }
 }

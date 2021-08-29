@@ -31,6 +31,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     Network().getProducts { products in
       self.products = products
+        print(products?.count)
 
       DispatchQueue.main.async {
         self.wishListCollect.reloadData()
