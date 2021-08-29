@@ -11,7 +11,7 @@ import UIKit
 
 class NetworkService {
     
-    var wishListProducts: Array<Dictionary<String,Any>> = [];
+    var Products: Array<Dictionary<String,Any>> = [];
 
     
     //Get data from API
@@ -41,8 +41,8 @@ class NetworkService {
                     //PARSE IT
                     if let statusCode = json["status"] as? String {
                         if(statusCode == "ok") {
-                            if let products = json["wishListProducts"] as? Array<Dictionary<String,Any>> {
-                                self.wishListProducts = products;
+                            if let products = json["Products"] as? Array<Dictionary<String,Any>> {
+                                self.Products = products;
                                 DispatchQueue.main.async {
                                     ViewController().wishListCollect.reloadData()
                                     print(products.count)
@@ -59,7 +59,16 @@ class NetworkService {
                 } else {
                     print(error);
                 }
+                do {
+                    let json = try JSONDecoder().decode(ProductCall.self, from: data!)
+                                guard let currentProduct = CurrentProduct(productCall: json) else { return }
+                                  completionHandler(currentProduct)
+                              } catch let error as NSError {
+                                  print(error)
+                              }
+                
             }
+            
 
           }.resume()
 
