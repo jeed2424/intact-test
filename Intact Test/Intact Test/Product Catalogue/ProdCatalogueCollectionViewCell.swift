@@ -8,10 +8,8 @@
 import UIKit
 
 class ProdCatalogueCollectionViewCell: UICollectionViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

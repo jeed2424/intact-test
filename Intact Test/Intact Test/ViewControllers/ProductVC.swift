@@ -10,7 +10,7 @@ import UIKit
 
 class ProductVC: UIViewController {
     
-    var networkManager = NetworkService()
+    var networkManager = Network()
     
 // MARK: - Outlets
     
