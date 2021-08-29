@@ -25,8 +25,13 @@ class ProductVC: UIViewController {
 // MARK: - Actions
     
     @IBAction func btnWishList(_ sender: Any) {
+        print("Hello")
     }
     
+    @IBAction func btnBack(_ sender: Any) {
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainVC") as! ViewController
+        self.navigationController?.pushViewController(mainVC, animated: false)
+    }
     
     
     

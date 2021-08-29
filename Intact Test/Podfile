@@ -9,6 +9,7 @@ target 'Intact Test' do
 
  pod 'Cosmos'
  pod 'Alamofire'
+ pod 'SDWebImage'
 
   target 'Intact TestTests' do
     inherit! :search_paths

@@ -24,7 +24,7 @@ struct CurrentProduct {
     
     let image: String
     
-    let price: Float
+    let price: Double
     var priceString: String {
         return "\(price)"
     }
@@ -47,14 +47,14 @@ struct CurrentProduct {
         title = productCall.products.first!.title
         brand = productCall.products.first!.brand
         shortDes = productCall.products.first!.shortDescription
-        desLong = productCall.products.description
+        desLong = productCall.products.first!.productDescription
         image = productCall.products.first!.image
         price = productCall.products.first!.price
-        colorCode = productCall.colors.first!.code
-        colorName = productCall.colors.first!.name
-        sizeH = productCall.size.H
-        sizeW = productCall.size.W
-        sizeD = productCall.size.D
+        colorCode = (productCall.products.first!.colors?.first!.code)!
+        colorName = (productCall.products.first!.colors?.first!.name)!
+        sizeH = productCall.products.first!.size.h
+        sizeW = productCall.products.first!.size.w
+        sizeD = productCall.products.first!.size.d
     }
     
 }

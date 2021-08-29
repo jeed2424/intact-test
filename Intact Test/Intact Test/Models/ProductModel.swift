@@ -9,50 +9,39 @@ import Foundation
 
 // MARK: - Welcome
 struct ProductCall: Codable {
-    let products: [Products]
-    let colors: [Colors]
-    let size: Size
-}
-
-// MARK: - Main
-struct Products: Codable {
-    let title, brand, shortDescription, description, image: String
-   // let colors: Array<Any>
-    let price: Float
-    let id: Int
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case title
-        case brand
-        case shortDescription = "short_description"
-        case description
-        case image
-        case price
-        //case size
-       // case colors
-        
-
+        let products: [Product]
     }
-}
 
-// MARK: - Colors
-struct Colors: Codable {
-    let code, name: String
-    
-    enum CodingKeys: String, CodingKey {
-        case code
-        case name
-    }
-}
+    // MARK: - Product
+    struct Product: Codable {
+        let id: Int
+        let title, brand, shortDescription, productDescription: String
+        let price: Double
+        let image: String
+        let colors: [Color]?
+        let size: Size
+        let quantity: Int
 
-// MARK: - Size
-struct Size: Codable {
-    let H, W, D: String
-    
-    enum CodingKeys: String, CodingKey {
-        case H
-        case W
-        case D
+        enum CodingKeys: String, CodingKey {
+            case id, title, brand
+            case shortDescription = "short_description"
+            case productDescription = "description"
+            case price, image, colors, size, quantity
+        }
     }
-}
+
+    // MARK: - Color
+    struct Color: Codable {
+        let code, name: String
+    }
+
+    // MARK: - Size
+    struct Size: Codable {
+        let h, w, d: String
+
+        enum CodingKeys: String, CodingKey {
+            case h = "H"
+            case w = "W"
+            case d = "D"
+        }
+    }
