@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Welcome
 struct ProductCall: Codable {
-        let products: [Product]
+    let products: [String: Product]
     }
 
     // MARK: - Product
